@@ -4,8 +4,9 @@ import Shipments from './Components/Shipments';
 import Vehicles from './Components/VehiclePage/Vehicles';
 import Customers from './Components/Customers'
 import Transporters from './Components/Transporters'
-import { Router, Routes, Route} from 'react-router-dom';
+import { Routes, Route, Switch} from 'react-router-dom';
 import React, { useState } from 'react';
+import Home from './Components/Home';
 
 
 
@@ -72,29 +73,16 @@ function App() {
     }
   }
 
-  const [nav, navActive] = useState({
-    clickedState: null,
-    objects: [{id:1, linked: '/', link: 'Home', icon: 'fa fa-solid fa-house-user'},
-      {id:2, linked: 'Vehicles', link: 'Vehicles', icon: 'fa fa-solid fa-truck'},
-      {id:3, linked: 'Transporters', link: 'Transporters', icon: 'fa fa-solid fa-taxi'},
-      {id:4, linked: 'Customers', link: 'Customers', icon: 'fa fa-solid fa-user'},
-      {id:5, linked: 'Shipments', link: 'Shipments', icon: 'fa fa-solid fa-ship'},
-    ]
-  })
 
   return (
     <div className="App">  
     <Routes>
-      <Route exact path='/'/>
+      <Route exact path='/' element={<Home lightTheme={lightTheme} themeSwitcher={themeSwitcher} setLightTheme={setLightTheme} chartState={chartState} toggleActive={toggleActive} toggleActiveStyles={toggleActiveStyles}/>}/>
       <Route path='/Vehicles' element={<Vehicles closePopUp ={closePopUp} trackingDiv={trackingDiv} trackShipment={trackShipment}/>}/>
       <Route path='/Transporters' element={<Transporters />}/>
       <Route path='/Customers' element={<Customers />}/>
       <Route path='/Shipments' element={<Shipments />}/>
     </Routes>    
-      <div className="body">
-          <Sidebar nav={nav}/>
-          <Body lightTheme={lightTheme} themeSwitcher={themeSwitcher} setLightTheme={setLightTheme} chartState={chartState} toggleActive={toggleActive} toggleActiveStyles={toggleActiveStyles}/>
-      </div>
     </div>
   );
 }
