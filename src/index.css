@@ -118,11 +118,14 @@ p,h4{
 .internal-tools p{
   color:var(--internal-tools-font-color);
 }
-.internal-tools p:hover, .main-menu-links p:hover{
+.internal-tools p:hover{
   background-color: var(--sidebar-hover);
   color:var(--sidebar-hover-font);
   transition: .5s ease;
   filter: grayscale(0);
+}
+.active p{
+  background-color: var(--sidebar-hover);
 }
 .internal-tools{
   margin-bottom:0px;

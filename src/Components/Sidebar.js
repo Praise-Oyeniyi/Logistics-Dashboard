@@ -1,28 +1,19 @@
 import React from 'react'
-import {Routes, Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
-const Sidebar = ({nav}) => {
+const Sidebar = () => {
     return (
         <div className='sidebar-holder'>
             <div className="sidebar-outer">
-                <Link to='/Home'><h3 className="logo">IPI<span>.</span></h3></Link>
+                <NavLink to='/'><h3 className="logo">IPI<span>.</span></h3></NavLink>
                 <div className="main-menu-links">
                     <h4 className="main-menu-header">MAIN MENU</h4>
 
-
-
-                    {nav?.objects.map((e,index)=>
-                        (<Link to={'/'+e?.linked} key={index} ><p><i className={e.icon}></i>{e?.link}</p></Link>)
-                    )}
-
-
-
-
-                    {/* <Link to='/Home'><p className={toggleSideBarActiveeStyles({key:1})} onClick={()=>{toggleSideBarActive('1');toggleSideBarActivee('1')}}><i className="fa fa-solid fa-house-user"></i>Home</p></Link> */}
-                    {/* <Link to='/Vehicles' key={'2'}><p><i className="fa fa-solid fa-truck"></i>Vehicles</p></Link>
-                    <Link to='/Transporters' key={'3'}><p><i className="fa fa-solid fa-taxi"></i>Transporters</p></Link>
-                    <Link to='/Customers' key={'4'}><p><i className="fa fa-solid fa-user"></i>Customers</p></Link>
-                    <Link to='/Shipments'key={'5'}><p><i className="fa fa-solid fa-ship"></i>Shipments</p></Link> */}
+                    <NavLink to='/'><p ><i className="fa fa-solid fa-house-user"></i>Home</p></NavLink>
+                    <NavLink to='/Vehicles' key={'2'}><p><i className="fa fa-solid fa-truck"></i>Vehicles</p></NavLink>
+                    <NavLink to='/Transporters' key={'3'}><p><i className="fa fa-solid fa-taxi"></i>Transporters</p></NavLink>
+                    <NavLink to='/Customers' key={'4'}><p><i className="fa fa-solid fa-user"></i>Customers</p></NavLink>
+                    <NavLink to='/Shipments'key={'5'}><p><i className="fa fa-solid fa-ship"></i>Shipments</p></NavLink>
                 </div>
                 <div className="internal-tools">
                     <h4 className="internal-tools-header" key={'6'}>INTERNAL TOOLS</h4>
