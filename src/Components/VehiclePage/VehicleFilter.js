@@ -1,58 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Onsearch from './Onsearch'
 import user from '../../Components/images/user.png'
 import TrackingBox from './TrackingBox'
+import { VehicleData } from './VehicleFilterData'
 
 const VehicleFilter = ({closePopUp, trackingDiv, trackShipment}) => {
+    const [arr, filterArr] = useState(VehicleData)
+
+    const filterValues = (vehicletype)=>{
+       const filtered = VehicleData.filter(e => e.hasOwnProperty(vehicletype) == true)
+       filterArr(filtered)
+    }
+    
   return (
     <div className='Vfilter-outer'>
         <Onsearch trackingDiv={trackingDiv}/>
         <TrackingBox closePopUp={closePopUp}/>
         <div className="Vfilter-top">
             <ul className="v-filter-top-list">
-                <li>All Vehicles</li>
-                <li>Trucks</li>
-                <li>Trailers</li>
-                <li>Tankers</li>
+                <li onClick={()=>filterValues('icon')}>All Vehicles</li>
+                <li onClick={()=>filterValues('truck')}>Trucks</li>
+                <li onClick={()=>filterValues('trailers')}>Trailers</li>
+                <li onClick={()=>filterValues('tankers')}>Tankers</li>
             </ul>
             <i className="fa fa-search"></i>
         </div>
         <div className="Vfilter-bottom">
-            <div className="vehicle-box-info">
+            {arr.map((e)=>(
+                <div key={e.id} className={arr.length>3?"vehicle-box-info vehicle-box-info-top": "vehicle-box-info"}>
                 <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <i className="fa fa-solid fa-truck"></i>
+                    <i className={e.icon}></i>
                     <div>
                         <h4 className="vehicle-info-head">
-                            ET-272-KJA
+                            {e.vehicleId}
                         </h4>
-                        <p>Toyota Highlander 2004</p>
+                        <p>{e.vehicleInfo}</p>
                     </div>
                 </div>
 
                 <div className="vehicle-info-outer">
                     <div>
                         <h4 className="vehicle-info-head">
-                            Lagos
+                            {e.location}
                         </h4>
-                        <p>Start Location</p>
+                        <p>{e.locationDescription}</p>
                     </div>
                 </div>
 
                 <div className="vehicle-info-outer">
                     <div>
                         <h4 className="vehicle-info-head">
-                            Ikeja
+                            {e.sLocation}
                         </h4>
-                        <p>Destination</p>
+                        <p>{e.sLocationD}</p>
                     </div>
                 </div>
 
                 <div className="vehicle-info-outer">
                     <div>
                         <h4 className="vehicle-info-head">
-                            In Transit
+                            {e.info}
                         </h4>
-                        <p>Status</p>
+                        <p>{e.infoInfo}</p>
                     </div>
                 </div>
 
@@ -60,7 +69,7 @@ const VehicleFilter = ({closePopUp, trackingDiv, trackShipment}) => {
                     <img src={user} alt="user-img" />
                     <div>
                         <h4 className="vehicle-info-head">
-                            Johnson C
+                            {e.driverName}
                         </h4>
                         <p>Transporter</p>
                     </div>
@@ -69,7 +78,7 @@ const VehicleFilter = ({closePopUp, trackingDiv, trackShipment}) => {
                 <div className="vehicle-info-outer vehicle-info-outer-flex">
                     <div>
                         <h4 className="vehicle-info-head vehicle-info-head-span">
-                            <i className="fa fa-solid fa-circle"></i>
+                            <i className={e.circle}></i>
                             In Transit
                         </h4>
                         <p className='ts' onClick={()=>trackShipment()}>Track Shipment</p>
@@ -81,204 +90,7 @@ const VehicleFilter = ({closePopUp, trackingDiv, trackShipment}) => {
                     </div>
                 </div>
             </div>
-
-
-
-            <div className="vehicle-box-info">
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <i className="fa fa-solid fa-truck"></i>
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            ET-272-KJA
-                        </h4>
-                        <p>Toyota Highlander 2004</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Lagos
-                        </h4>
-                        <p>Start Location</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Ikeja
-                        </h4>
-                        <p>Destination</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            In Transit
-                        </h4>
-                        <p>Status</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <img src={user} alt="user-img" />
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Jeremy Lopez
-                        </h4>
-                        <p>Transporter</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <div>
-                        <h4 className="vehicle-info-head vehicle-info-head-span ">
-                            <i className="fa fa-solid fa-circle span-two"></i>
-                            In Transit
-                        </h4>
-                        <p className='ts' onClick={()=>trackShipment()}>Track Shipment</p>
-                    </div>
-                    <div className="burger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div className="vehicle-box-info">
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <i className="fa fa-solid fa-truck"></i>
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            ET-272-KJA
-                        </h4>
-                        <p>Toyota Highlander 2004</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Lagos
-                        </h4>
-                        <p>Start Location</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Ikeja
-                        </h4>
-                        <p>Destination</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            In Transit
-                        </h4>
-                        <p>Status</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <img src={user} alt="user-img" />
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Indiana Jones
-                        </h4>
-                        <p>Transporter</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <div>
-                        <h4 className="vehicle-info-head vehicle-info-head-span ">
-                            <i className="fa fa-solid fa-circle span-three"></i>
-                            In Transit
-                        </h4>
-                        <p className='ts' onClick={()=>trackShipment()}>Track Shipment</p>
-                    </div>
-                    <div className="burger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div className="vehicle-box-info">
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <i className="fa fa-solid fa-truck"></i>
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            ET-272-KJA
-                        </h4>
-                        <p>Toyota Highlander 2004</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Lagos
-                        </h4>
-                        <p>Start Location</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Ikeja
-                        </h4>
-                        <p>Destination</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer">
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            In Transit
-                        </h4>
-                        <p>Status</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <img src={user} alt="user-img" />
-                    <div>
-                        <h4 className="vehicle-info-head">
-                            Johnson C
-                        </h4>
-                        <p>Transporter</p>
-                    </div>
-                </div>
-
-                <div className="vehicle-info-outer vehicle-info-outer-flex">
-                    <div>
-                        <h4 className="vehicle-info-head vehicle-info-head-span ">
-                            <i className="fa fa-solid fa-circle span-four"></i>
-                            In Transit
-                        </h4>
-                        <p className='ts' onClick={()=>trackShipment()}>Track Shipment</p>
-                    </div>
-                    <div className="burger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
+            ))}
         </div>
     </div>
   )

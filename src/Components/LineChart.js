@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Line} from 'react-chartjs-2';
 
 
@@ -8,50 +8,36 @@ const LineChart = () => {
         <div>
             <Line
             data={{
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: ['Oct 22', 'Oct 23','Oct 24','Oct 25','Oct 26','Oct 27','Oct 28','Oct 29',],
               datasets: [
                 {
-                  label: '# of votes',
-                  data: [12, 19, 3, 5, 2, 3],
-                  backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                  ],
-                  borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                  ],
-                  borderWidth: 1,
+                  label: 'Shipments',
+                  data: [10, 15, 13, 55, 50, 30, 40, 60],
+                  backgroundColor: '#2CD9C5',
+                  borderColor: '#2CD9C5',
+                  borderWidth: 1.2,
                 },
-                // {
-                //   label: 'Quantity',
-                //   data: [47, 52, 67, 58, 9, 50],
-                //   backgroundColor: 'orange',
-                //   borderColor: 'red',
-                // },
+                {
+                  label: 'Vehicles',
+                  data: [0, 5, 10, 8, 20, 9, 20, 30],
+                  backgroundColor: '#6672fb3b',
+                  borderColor: '#6672FB',
+                  borderWidth: 1.2,
+                },
               ],
             }}
-            height={400}
-            width={600}
+            height={195}
             options={{
               maintainAspectRatio: false,
-              scales: {
-                yAxes: [
-                  {
-                    ticks: {
-                      beginAtZero: true,
-                    },
-                  },
-                ],
-              },
+              // scales: {
+              //   yAxes: [
+              //     {
+              //       ticks: {
+              //         beginAtZero: true,
+              //       },
+              //     },
+              //   ],
+              // },
               legend: {
                 labels: {
                   fontSize: 25,

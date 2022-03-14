@@ -1,10 +1,8 @@
-import Body from './Components/Body';
-import Sidebar from './Components/Sidebar';
 import Shipments from './Components/Shipments';
 import Vehicles from './Components/VehiclePage/Vehicles';
 import Customers from './Components/Customers'
 import Transporters from './Components/Transporters'
-import { Routes, Route, Switch} from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import React, { useState } from 'react';
 import Home from './Components/Home';
 
@@ -58,7 +56,7 @@ function App() {
 
   const [chartState, changeChartState] = useState({
     activeState: null,
-    objects: [{id:1, duration: '1D'}, {id:2, duration: '5D'}, {id:3, duration: '1M'}, {id:4, duration: '1Y'}, {id:5, duration: 'Max'}]
+    objects: [{id:1, duration: '1D', chartValue:'[10, 15, 13, 55, 50, 30, 40, 60]',}, {id:2, duration: '5D',chartValue:'[10, 15, 13, 55, 50, 30, 40, 60]',}, {id:3, duration: '1M'}, {id:4, duration: '1Y'}, {id:5, duration: 'Max'}]
   })
 
   const toggleActive = (index) =>{
