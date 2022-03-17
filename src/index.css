@@ -23,7 +23,7 @@ body{
   width:100%;
   font-size: 13px;
   font-family: 'Inter', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden !important;
 }
 .theme-selector{
   position: absolute;
@@ -711,7 +711,98 @@ h3{
   margin-top: 30px;
 }
 
-
+@media(max-width:480px) {
+  .body-container{
+    height:100%;
+  }
+  .sidebar-holder{
+    height: 100vh;
+    position: fixed;
+    z-index: 200;
+    width:100%;
+    display: none;
+  }
+  .sidebar-outer{
+    width:80%;
+    left:0;
+    margin:30px auto 10px auto;
+    overflow:auto;
+  }
+  .body-container-outer{
+    width:85%;
+    height:100%;
+    margin:4em auto;
+  }
+  .overview{
+    width:100%;
+    margin: auto;
+    height:40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .overview-top{
+    width:100%;
+    height:unset;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+  }
+  .overview-top-right{
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin:-2em 0 20px 0; 
+  }
+  .overview-top-right i{
+    margin-right: unset;
+  }
+  .overview-top-right img{
+    border-left:unset;
+  }
+  .overview-outer-bottom{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .overview-boxes-outer{
+    width:100%;
+    margin-bottom: 15px;
+  }
+  .overview-box h3{
+    font-size:28px;
+    font-weight: 900;
+    padding: 8px 0;
+  }
+  .shipment-overview-outer{
+    margin-top: 4em;
+  }
+  .shipments-top{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  .chart-filter{
+    width:90%;
+    margin-top: 2em;
+  }
+  .chart{
+    width:100%;
+    padding:1%;
+    height:20em;
+    background-color: var(--sidebar-background);
+    border-radius: 4px;
+  }
+  .shipments-no {
+    width: 100%;
+    margin: 5px 3px 10px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+}
 
 
 

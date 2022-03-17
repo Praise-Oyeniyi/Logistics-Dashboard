@@ -3,16 +3,16 @@ import {Line} from 'react-chartjs-2';
 
 
 
-const LineChart = () => {
+const LineChart = ({chartState}) => {
     return (
         <div>
-            <Line
+          <Line
             data={{
               labels: ['Oct 22', 'Oct 23','Oct 24','Oct 25','Oct 26','Oct 27','Oct 28','Oct 29',],
               datasets: [
                 {
                   label: 'Shipments',
-                  data: [10, 15, 13, 55, 50, 30, 40, 60],
+                  data: chartState,
                   backgroundColor: '#2CD9C5',
                   borderColor: '#2CD9C5',
                   borderWidth: 1.2,
