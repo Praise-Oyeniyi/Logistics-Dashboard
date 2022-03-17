@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LineChart from './LineChart'
 import {Chart as ChartJS} from 'chart.js/auto'
 
 const ShipmentsOverview = ({chartState, toggleActive, toggleActiveStyles}) => {
+    const [inValue, upValue] = useState([10, 15, 13, 55, 50, 30, 40, 60]);
+    
+    const updateChart = (chartValue) =>{
+        upValue(chartValue)
+        return inValue
+    }
+    
     return (
         <div className='shipment-overview-outer'>
             <div className="shipments-top">
@@ -13,7 +20,7 @@ const ShipmentsOverview = ({chartState, toggleActive, toggleActiveStyles}) => {
 
                 <ul className="chart-filter">
                     {chartState.objects.map((e,index)=>(
-                        <li className={toggleActiveStyles(index)} key={index} onClick={()=>{toggleActive(index)}}>{e.duration}</li>
+                        <li className={toggleActiveStyles(index)} key={index} onClick={()=>{toggleActive(index); updateChart(e.chartValue)}}>{e.duration}</li>
                     ))}
                 </ul>
             </div>
@@ -30,7 +37,7 @@ const ShipmentsOverview = ({chartState, toggleActive, toggleActiveStyles}) => {
                             <h3>237,889</h3>
                         </div>
                     </div>
-                    <LineChart/>
+                    <LineChart chartState={inValue}/>
                 </div>
             </div>
         </div>
