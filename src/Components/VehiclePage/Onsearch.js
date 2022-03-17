@@ -26,7 +26,7 @@ const Onsearch = ({trackingDiv}) => {
                     </div>
                 </div>
 
-                <div className="vehicle-box-info vehicle-box-info-pop">
+                <div className="vehicle-box-info-slide vehicle-box-info-pop">
                     <div className="vehicle-info-outer vehicle-info-outer-flex">
                         <i className="fa fa-solid fa-truck"></i>
                         <div>
