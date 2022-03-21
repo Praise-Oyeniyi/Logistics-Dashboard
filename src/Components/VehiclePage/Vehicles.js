@@ -3,11 +3,13 @@ import Sidebar from '../Sidebar'
 import user from '../../Components/images/user.png'
 import VehicleFilter from './VehicleFilter'
 import { AnimatePresence, motion } from 'framer-motion'
+import NavBar from '../NavBar'
 
 const Vehicles = ({closePopUp, trackingDiv, trackShipment}) => {
     return (
         <motion.div className='motion-class' initial={{left:-100+'vw'}} animate={{left:0}} exit={{right:-100+'vw'}} transition={{duration:0.5}}>
                 <div className='body'>
+                    <NavBar/>
                     <Sidebar/>
                     <div className="body-container">
                         <div className="body-container-outer">
