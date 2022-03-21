@@ -21,7 +21,7 @@ const ErrorPage = () => {
                     <motion.div initial={{scale:0}} animate={{scale:1}} transition={{duration:0.7}}>
                         <img src={errorHel} alt="error-page" />
                     </motion.div>
-                    <p className="error-bottom"><span>Find Your Way</span>...tracked Shipment Mising</p>
+                    <p className="error-bottom"><span>Find Your Way</span>...tracked Shipment Missing</p>
                 </div>
             </div>
         </div>

@@ -725,26 +725,30 @@ h3{
   padding: 18px 0;
   margin-bottom: 13px;
 }
-/* .vehicle-box-info-slide:last-child{
-  margin-bottom: 0;
-} */
+.Burger{
+  display: none;
+}
 
 @media(max-width:480px) {
   .body-container{
     height:100%;
   }
   .sidebar-holder{
+    position: relative;
     height: 100vh;
     position: fixed;
     z-index: 200;
     width:100%;
-    display: none;
+    top:-100vh;
   }
   .sidebar-outer{
     width:80%;
     left:0;
     margin:30px auto 10px auto;
     overflow:auto;
+  }
+  .internal-tools p, .main-menu-links p{
+    width:80%;
   }
   .body-container-outer{
     width:85%;
@@ -767,13 +771,13 @@ h3{
     flex-direction: column-reverse;
   }
   .overview-top-right{
-    width: 100%;
+    width: 85%;
     justify-content: space-between;
     flex-direction: row-reverse;
     margin:-2em 0 20px 0; 
   }
   .overview-top-right i{
-    margin-right: unset;
+    margin-right:unset;
   }
   .overview-top-right img{
     border-left:unset;
@@ -839,6 +843,10 @@ h3{
     background-color: var(--primary-color);
     box-shadow: none !important;
   }
+  .Vfilter-bottom{
+    padding:0;
+    border: 12px solid transparent;
+  }
   .vehicle-box-info-slide{
     width: 750px;
     padding: 22px 0;
@@ -871,6 +879,74 @@ h3{
   }
   .tracking-vehicle-box-info{
     display: none;
+  }
+
+  .error404-text{
+    font-size: 13em;
+  }
+  .error-plea{
+    font-size: 18px;
+    transform: rotate(-20deg);
+  }
+  .back-home{
+    background-color: #EE9C30;
+    width:50%;
+    height:40px;
+    margin:2.5em auto;
+  }
+  .error-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .error-image img{
+    height:15em;
+    margin:0;
+    animation: example 5s infinite;
+  }
+  .error-top span, .error-bottom span{
+    font-size: 26px;
+  }
+  .error-top{
+    transform: rotate(20deg);
+    margin-top: 20px;
+  }
+  .error-bottom{
+    text-align: right;
+  }
+  .error-outer{
+    flex-direction: column;
+  }
+  .error-text{
+    width: 100%;
+    align-self: flex-start;
+    text-align: right;
+  }
+  .Burger{
+    position: absolute;
+    top:3.3em;
+    right:2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 300;
+  }
+  .Burger > div{
+    transition: inherit;
+    height:1px;
+    background-color: var(--logo-color);
+    margin-bottom:5px;
+  }
+  .burger-1{
+    width:35px;
+    position: relative;
+  }
+  .burger-2{
+    width: 25px;
+    margin-top: 3px;
   }
 }
 
