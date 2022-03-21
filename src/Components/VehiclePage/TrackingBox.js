@@ -48,7 +48,7 @@ const TrackingBox = ({closePopUp}) => {
             </div>
             
 
-            <div className="vehicle-box-info tracking-vehicle-box-info">
+            <div className="vehicle-box-info-slide tracking-vehicle-box-info">
                 <div className="vehicle-info-outer vehicle-info-outer-flex">
                     <i className="fa fa-solid fa-truck"></i>
                     <div>

@@ -1,3 +1,5 @@
+import { faRotate } from '@fortawesome/free-solid-svg-icons'
+import { motion } from 'framer-motion'
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
 import errorHel from './images/brk-hel.png'
@@ -16,7 +18,9 @@ const ErrorPage = () => {
                 </div>
                 <div className="error-image">
                     <p className="error-top">Transporters <span>.... Broken link</span></p>
-                    <img src={errorHel} alt="error-page" />
+                    <motion.div initial={{scale:0}} animate={{scale:1}} transition={{duration:0.7}}>
+                        <img src={errorHel} alt="error-page" />
+                    </motion.div>
                     <p className="error-bottom"><span>Find Your Way</span>...tracked Shipment Mising</p>
                 </div>
             </div>

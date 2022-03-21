@@ -2,10 +2,10 @@ import Shipments from './Components/Shipments';
 import Vehicles from './Components/VehiclePage/Vehicles';
 import Customers from './Components/Customers'
 import Transporters from './Components/Transporters'
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route, useLocation} from 'react-router-dom';
 import React, { useState } from 'react';
 import Home from './Components/Home';
-
+import {AnimatePresence} from 'framer-motion'
 
 
 function App() {
@@ -71,16 +71,19 @@ function App() {
     }
   }
 
+  const location = useLocation();
 
   return (
     <div className="App">  
-    <Routes>
-      <Route exact path='/' element={<Home lightTheme={lightTheme} themeSwitcher={themeSwitcher} setLightTheme={setLightTheme} chartState={chartState} toggleActive={toggleActive} toggleActiveStyles={toggleActiveStyles}/>}/>
-      <Route path='/Vehicles' element={<Vehicles closePopUp ={closePopUp} trackingDiv={trackingDiv} trackShipment={trackShipment}/>}/>
-      <Route path='/Transporters' element={<Transporters />}/>
-      <Route path='/Customers' element={<Customers />}/>
-      <Route path='/Shipments' element={<Shipments />}/>
-    </Routes>    
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Routes location={location} key={location.pathname}>
+        <Route exact path='/' element={<Home lightTheme={lightTheme} themeSwitcher={themeSwitcher} setLightTheme={setLightTheme} chartState={chartState} toggleActive={toggleActive} toggleActiveStyles={toggleActiveStyles}/>}/>
+        <Route path='/Vehicles' element={<Vehicles closePopUp ={closePopUp} trackingDiv={trackingDiv} trackShipment={trackShipment}/>}/>
+        <Route path='/Transporters' element={<Transporters />}/>
+        <Route path='/Customers' element={<Customers />}/>
+        <Route path='/Shipments' element={<Shipments />}/>
+      </Routes>
+    </AnimatePresence>    
     </div>
   );
 }
