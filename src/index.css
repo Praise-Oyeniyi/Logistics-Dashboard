@@ -729,7 +729,62 @@ h3{
   display: none;
 }
 
-@media(max-width:480px) {
+@media screen and (max-width: 768px) and (min-width: 500px) {
+  .body-container {
+    width: 70%;
+    margin-left: 30%;
+    position: relative;
+}
+  .body-container-outer {
+    margin: 2.5em auto;
+}
+  .sidebar-holder{
+    height: 100%;
+    position: fixed;
+    min-width:30%;
+    background-color: var(--sidebar-background);
+  }
+  .sidebar-outer{
+    width:80%;
+    margin:30px auto 10px auto;
+  }
+  .log-out {
+    position: relative;
+  }
+  .vehicles-top {
+    margin-bottom: 2em;
+    height: unset !important;
+  }
+  .vehicle-box-info-slide{
+    width:700px;
+  }
+  .overview{
+    height:100%
+  }
+  .overview-outer-bottom {
+    flex-direction: column;
+    align-items:center;
+    margin-top: 2em;
+}
+  .overview-boxes-outer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+  .shipments-top{
+    margin: 2em 0;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .shipments-text {
+    align-self: flex-start;
+  }
+  .chart-filter {
+    width: unset;
+    margin-top: 1em;
+}
+}
+
+@media screen and (max-width:499px) {
   .body-container{
     height:100%;
   }
@@ -770,6 +825,9 @@ h3{
     justify-content: space-between;
     flex-direction: column-reverse;
   }
+  .overview-bottom-left {
+    align-self: flex-start;
+}
   .overview-top-right{
     width: 85%;
     justify-content: space-between;
