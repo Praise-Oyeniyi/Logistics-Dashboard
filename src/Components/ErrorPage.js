@@ -14,7 +14,7 @@ const ErrorPage = () => {
                         404
                     </h1>
                     <p className='error-plea'>Sorry, Page is Still Under Construction. . .</p>
-                    <Link to='/'><p className='back-home'>Go Back Home</p></Link>
+                    <Link to='/'><p className='back-home'>Go Home</p></Link>
                 </div>
                 <div className="error-image">
                     <p className="error-top">Transporters <span>.... Broken link</span></p>
