@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
     return (
-        <motion.div className='motion-class sidebar-holder' initial={{left:-100+'vw'}} animate={{left:0}} transition={{duration:0.7, type:'spring', stiffness:50}}> 
+        <motion.div className='motion-class sidebar-holder' initial={{left:-100+'vw'}} animate={{left:0}} transition={{duration:0.5, type:'spring', stiffness:50}}> 
                 <div className="sidebar-outer">
                     <NavLink to='/'><h3 className="logo">IPI<span>.</span></h3></NavLink>
                     <div className="main-menu-links">
