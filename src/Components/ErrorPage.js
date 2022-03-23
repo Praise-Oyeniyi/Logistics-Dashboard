@@ -6,7 +6,7 @@ import errorHel from './images/brk-hel.png'
 
 const ErrorPage = () => {
   return (
-    <div className="body-container">
+    <div className="body-container error-container">
         <div className="body-container-outer body-container-outer-error">
             <div className="error-outer">
                 <div className="error-text">

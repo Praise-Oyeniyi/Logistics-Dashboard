@@ -356,13 +356,14 @@ h3{
   height:100%;
   position: relative;
 }
-.Vfilter-top{
-  width:95%;
+.Vfilter-top {
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom:1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  padding: 0 2.5%;
 }
 .v-filter-top-list{
   width:50%;
@@ -391,25 +392,25 @@ h3{
 .v-filter-top-list li{
   list-style: none;
 }
-.Vfilter-bottom{
-  width:100%;
+.Vfilter-bottom {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 12px;
   overflow-y: auto;
+  min-height: 63vh;
   max-height: 63vh;
+  position: relative;
 }
 .Vfilter-bottom::-webkit-scrollbar {
   display: none;
 }
-.vehicle-box-info-top{
-  position: relative;
-  top:29em;
-}
-.vehicle-box-info{
-  width:100%;
+.vehicle-box-info {
+  position: absolute;
+  width: 97%;
+  top: 3%;
 }
 .vehicle-info-head{
   display: flex;
@@ -639,6 +640,9 @@ h3{
 .body-container-outer-error{
   width:100%;
 } 
+.error-container{
+  height: 100%;
+}
 .error-outer{
   width:90%;
   height: 80%;
