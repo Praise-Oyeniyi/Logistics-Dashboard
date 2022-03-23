@@ -13,10 +13,12 @@ const NavBar = () => {
             document.querySelector('.burger-1').style.cssText = 'transform:rotate(45deg) translateY(7px); width:25px; top:-.5px';
             document.querySelector('.burger-2').style.cssText = 'transform:rotate(-45deg) translateY(-7px); margin-top:3px';
             document.querySelector('.sidebar-holder').style.top = 0;
+            document.querySelector('.Burger').style.position = 'fixed';
         }else{
             document.querySelector('.burger-1').style.cssText = 'transform:rotate(0deg) translateY(0); width:35px; top:0';
             document.querySelector('.burger-2').style.cssText = 'transform:rotate(0deg) translateY(0); margin-top:3px';
             document.querySelector('.sidebar-holder').style.top = -100+'vh';
+            document.querySelector('.Burger').style.position = 'absolute';
 
         }
     }
