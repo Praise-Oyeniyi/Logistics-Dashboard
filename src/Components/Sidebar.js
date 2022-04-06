@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
     return (
-        <motion.div className='motion-class sidebar-holder' initial={{left:-100+'vw'}} animate={{left:0}} transition={{duration:0.5, type:'spring', stiffness:50}}> 
+        <div className='motion-class sidebar-holder'> 
                 <div className="sidebar-outer">
                     <NavLink to='/'><h3 className="logo">IPI<span>.</span></h3></NavLink>
                     <div className="main-menu-links">
@@ -28,7 +28,7 @@ const Sidebar = () => {
                 <div className="log-out">
                     <p>Log Out</p>
                 </div>
-        </motion.div>
+        </div>
     )
 }
 

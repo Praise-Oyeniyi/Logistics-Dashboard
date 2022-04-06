@@ -80,6 +80,7 @@ p,h4{
   position: relative;
   width:20%;
   background-color: var(--sidebar-background);
+  z-index: 200;
 }
 .sidebar-outer{
   width:80%;
