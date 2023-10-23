@@ -55,7 +55,7 @@ function App() {
   }
 
   const [chartState, changeChartState] = useState({
-    activeState: null,
+    activeState: 0,
     objects: [{id:1, duration: '1D', chartValue:[10, 15, 13, 55, 50, 30, 40, 60],}, {id:2, duration: '5D',chartValue:[13, 20, 30, 50, 55, 30, 40, 60],}, {id:3, duration: '1M',chartValue:[13, 20, 35, 50, 55, 35, 40, 60]}, {id:4, duration: '1Y', chartValue:[13, 20, 30, 50, 55, 55, 50, 60]}, {id:5, duration: 'Max',chartValue:[13, 20, 30, 50, 55, 40, 55, 60]}]
   })
 
